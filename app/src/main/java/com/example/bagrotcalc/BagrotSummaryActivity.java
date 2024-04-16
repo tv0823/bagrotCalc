@@ -2,12 +2,13 @@ package com.example.bagrotcalc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class BagrotSummaryActivity extends AppCompatActivity {
-    TextView summary;
+    TextView summary, allAverages;
     Intent gi;
     BagrotGrade[] grades;
     int subjectsCount;
@@ -17,6 +18,7 @@ public class BagrotSummaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bagrot_summary);
 
         summary = findViewById(R.id.summary);
+        allAverages = findViewById(R.id.allAverages);
 
         gi = getIntent();
         BagrotGrade sub3 = (BagrotGrade) gi.getSerializableExtra("sub3");
@@ -50,8 +52,11 @@ public class BagrotSummaryActivity extends AppCompatActivity {
         }
 
         BagrotCertificate certificate = new BagrotCertificate(subjectsCount, grades);
-        summary.setText(certificate.toString());
+        summary.setText(certificate.toString() + "\n" + "The average is: " + certificate.bagrotAvg());
+        allAverages.setText(certificate.allAvg());
+    }
 
-
+    public void prev(View view) {
+        finish();
     }
 }

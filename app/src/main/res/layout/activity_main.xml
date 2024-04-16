@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="שם משתמש"
+            android:hint="Username"
             android:inputType="textPersonName" />
 
         <Space
@@ -65,7 +65,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space
@@ -122,7 +122,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space
@@ -179,7 +179,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space
@@ -236,7 +236,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space
@@ -293,7 +293,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space

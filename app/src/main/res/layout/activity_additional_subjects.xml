@@ -27,12 +27,12 @@
 
         <EditText
             android:id="@+id/eTmath"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space
@@ -47,7 +47,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="יחידות"
+            android:hint="Units"
             android:inputType="number" />
 
         <Space
@@ -87,12 +87,12 @@
 
         <EditText
             android:id="@+id/eTenglish"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space
@@ -107,7 +107,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="יחידות"
+            android:hint="Units"
             android:inputType="number" />
 
         <Space
@@ -147,12 +147,12 @@
 
         <EditText
             android:id="@+id/eTgradeSub1"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space
@@ -179,7 +179,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="מקצוע"
+            android:hint="Subject"
             android:inputType="text" />
 
         <Space
@@ -207,12 +207,12 @@
 
         <EditText
             android:id="@+id/eTgradeSub2"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number" />
 
         <Space
@@ -241,7 +241,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="מקצוע"
+            android:hint="Subject"
             android:inputType="text" />
 
         <Space
@@ -269,12 +269,12 @@
 
         <EditText
             android:id="@+id/eTgradeSub3"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="הכנס ציון"
+            android:hint="Enter grade"
             android:inputType="number"
             android:visibility="invisible" />
 
@@ -305,7 +305,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="מקצוע"
+            android:hint="Subject"
             android:inputType="text"
             android:visibility="invisible" />
 

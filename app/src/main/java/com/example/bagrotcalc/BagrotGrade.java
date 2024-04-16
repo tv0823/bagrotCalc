@@ -25,11 +25,19 @@ public class BagrotGrade implements Serializable {
         return !level.isEmpty() && (Integer.parseInt(level) == 5 || Integer.parseInt(level) == 4);
     }
 
+    public int getGrade() {
+        return this.grade;
+    }
+
+    public int getLevel() {
+        return  this.level;
+    }
+
     public int gradeWithBonus() {
         int finalGrade = this.grade;
-        if ((this.subject.equals(R.string.math_subject) && this.level == 5) || (this.subject.equals(R.string.english_subject) && this.level == 5)) {
+        if ((this.subject.equals("Math") && this.level == 5) || (this.subject.equals("English") && this.level == 5)) {
             finalGrade += 30;
-        } else if ((this.subject.equals(R.string.math_subject) && this.level == 4) || this.subject.equals(R.string.english_subject) && this.level == 4) {
+        } else if ((this.subject.equals("Math") && this.level == 4) || this.subject.equals("English") && this.level == 4) {
             finalGrade += 15;
         } else if (this.level == 5) {
             finalGrade += 20;

@@ -76,14 +76,14 @@ public class additionalSubjectsActivity extends AppCompatActivity {
 
             si.putExtra("math", new BagrotGrade(getString(R.string.math_subject), Integer.parseInt(lvlMath), Integer.parseInt(gradeMath)));
             si.putExtra("english", new BagrotGrade(getString(R.string.english_subject), Integer.parseInt(lvlEnglish), Integer.parseInt(gradeEnglish)));
-            si.putExtra("sub1", new BagrotGrade("sub1", 5, Integer.parseInt(gradeSub1)));
+            si.putExtra("sub1", new BagrotGrade(sub1, 5, Integer.parseInt(gradeSub1)));
 
             if (!tBsub2.isChecked()) {
-                si.putExtra("sub2", new BagrotGrade("sub2", 1, Integer.parseInt(gradeSub2)));
+                si.putExtra("sub2", new BagrotGrade(sub2, 1, Integer.parseInt(gradeSub2)));
             } else {
-                si.putExtra("sub2", new BagrotGrade("sub2", 5, Integer.parseInt(gradeSub2)));
+                si.putExtra("sub2", new BagrotGrade(sub2, 5, Integer.parseInt(gradeSub2)));
             } if(tBsub3.isChecked()) {
-                si.putExtra("sub3", new BagrotGrade("sub3", 5, Integer.parseInt(gradeSub3)));
+                si.putExtra("sub3", new BagrotGrade(sub3, 5, Integer.parseInt(gradeSub3)));
             }
 
             startActivity(si);
@@ -97,6 +97,8 @@ public class additionalSubjectsActivity extends AppCompatActivity {
         } else {
             eTsub3.setVisibility(View.INVISIBLE);
             eTgradeSub3.setVisibility(View.INVISIBLE);
+            eTsub3.setText("");
+            eTgradeSub3.setText("");
         }
     }
 }
