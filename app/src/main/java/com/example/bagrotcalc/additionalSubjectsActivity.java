@@ -85,6 +85,7 @@ public class additionalSubjectsActivity extends AppCompatActivity {
             } if(tBsub3.isChecked()) {
                 si.putExtra("sub3", new BagrotGrade(sub3, 5, Integer.parseInt(gradeSub3)));
             }
+            si.putExtra("username", gi.getStringExtra("username"));
 
             startActivity(si);
         }
@@ -94,11 +95,19 @@ public class additionalSubjectsActivity extends AppCompatActivity {
         if(tBsub3.isChecked()) {
             eTsub3.setVisibility(View.VISIBLE);
             eTgradeSub3.setVisibility(View.VISIBLE);
+            tBsub2.setChecked(true);
         } else {
             eTsub3.setVisibility(View.INVISIBLE);
             eTgradeSub3.setVisibility(View.INVISIBLE);
             eTsub3.setText("");
             eTgradeSub3.setText("");
+        }
+    }
+
+    public void pressedtB2(View view) {
+        if(tBsub3.isChecked()) {
+            tBsub2.setChecked(true);
+            Toast.makeText(this, "Cant do this while 3 subjects are on", Toast.LENGTH_SHORT).show();
         }
     }
 }

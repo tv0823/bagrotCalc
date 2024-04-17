@@ -225,7 +225,7 @@
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="ToggleButton"
+            android:onClick="pressedtB2"
             android:textOff="1"
             android:textOn="5" />
 
@@ -289,9 +289,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="pressedtB3"
-            android:text="ToggleButton"
-            android:textOff="ללא מגמה"
-            android:textOn="5" />
+            android:textOff="Add sub"
+            android:textOn="5"
+            android:textSize="14sp" />
 
         <Space
             android:layout_width="wrap_content"

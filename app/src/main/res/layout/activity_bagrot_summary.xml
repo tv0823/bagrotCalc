@@ -16,7 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="15"
+        android:layout_weight="17"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -86,12 +86,11 @@
             android:layout_weight="15" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/bestAverage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:gravity="center_horizontal"
-            android:text="TextView" />
+            android:gravity="center_horizontal" />
 
         <Space
             android:layout_width="50dp"

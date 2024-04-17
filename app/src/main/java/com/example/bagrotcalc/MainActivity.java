@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Invalid grade", Toast.LENGTH_SHORT).show();
         }
         else {
+            si.putExtra("username", userName);
             si.putExtra("lashon", new BagrotGrade(getString(R.string.lashon_subject), 2, Integer.parseInt(gradeLashon)));
             si.putExtra("saparot", new BagrotGrade(getString(R.string.saparot_subject), 2, Integer.parseInt(gradeSaparot)));
             si.putExtra("history", new BagrotGrade(getString(R.string.history_subject), 2, Integer.parseInt(gradeHistory)));

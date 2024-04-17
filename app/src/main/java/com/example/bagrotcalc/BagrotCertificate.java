@@ -39,35 +39,46 @@ public class BagrotCertificate {
         return sum;
     }
 
-    public String allAvg() {
-        String averages = "";
+    public double[] allAvg() {
+        double[] avgArr;
+        double averages = 0;
         double sum = 0;
+        int count = 0;
 
         int unitCount = 0;
         for(int i = 0; i<7; i++) {
             unitCount += grades[i].getLevel();
         }
+
         if(subjectsCount == 9) {
             if(grades[8].getLevel() == 1) {
-                averages += bagrotAvg() + "\n";
+                averages = bagrotAvg();
+                avgArr = new double[]{averages};
             } else {
+                avgArr = new double[3];
                 for(int i = 7; i<subjectsCount; i++) {
                     sum = sumRequiredSubjects();
                     sum += grades[i].gradeWithBonus() * grades[i].getLevel();
-                    averages += sum/(unitCount + grades[i].getLevel()) + "\n";
+                    averages = sum/(unitCount + grades[i].getLevel());
+                    avgArr[count] = averages;
+                    count++;
                 }
                 sum = sumRequiredSubjects();
                 for(int i = 7; i<subjectsCount; i++) {
                     sum += grades[i].gradeWithBonus() * grades[i].getLevel();
                     unitCount += grades[i].getLevel();
                 }
-                averages += sum/unitCount;
+                averages = sum/unitCount;
+                avgArr[count] = averages;
             }
         } else {
+            avgArr = new double[6];
             for(int i = 7; i<subjectsCount; i++) {
                 sum = sumRequiredSubjects();
                 sum += grades[i].gradeWithBonus() * grades[i].getLevel();
-                averages += sum/(unitCount + grades[i].getLevel()) + "\n";
+                averages = sum/(unitCount + grades[i].getLevel());
+                avgArr[count] = averages;
+                count++;
             }
             int tempUnitCount = unitCount;
             for(int i = 7; i<subjectsCount; i++) {
@@ -78,10 +89,12 @@ public class BagrotCertificate {
                     unitCount += grades[i].getLevel();
                     sum += grades[j].gradeWithBonus() * grades[j].getLevel();
                     unitCount += grades[j].getLevel();
-                    averages += sum/unitCount + "\n";
+                    averages = sum/unitCount;
+                    avgArr[count] = averages;
+                    count++;
                 }
             }
         }
-        return averages;
+        return avgArr;
     }
 }
