@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class BagrotSummaryActivity extends AppCompatActivity {
     TextView allAverages, bestAverage, subjectList, levelList, gradeList, bonusList, userInfo, average;
     Intent gi;
-    BagrotGrade[] grades;
-    int subjectsCount;
     double[] allAvgArr;
     String[] summary;
     double bestAvg, bagrotAvg;
@@ -31,11 +29,17 @@ public class BagrotSummaryActivity extends AppCompatActivity {
         bestAverage = findViewById(R.id.bestAverage);
 
         gi = getIntent();
-        String username = gi.getStringExtra("username");
-        BagrotGrade sub3 = (BagrotGrade) gi.getSerializableExtra("sub3");
 
+        initBagrotUI();
+    }
+
+    private BagrotCertificate initCertificate() {
+        BagrotGrade[] grades;
+        int subjectsCount;
+
+        BagrotGrade sub3 = (BagrotGrade) gi.getSerializableExtra("sub3");
         if(sub3 == null) {
-            grades =  new BagrotGrade[]{
+            grades = new BagrotGrade[]{
                     (BagrotGrade) gi.getSerializableExtra("lashon"),
                     (BagrotGrade) gi.getSerializableExtra("saparot"),
                     (BagrotGrade) gi.getSerializableExtra("history"),
@@ -48,7 +52,7 @@ public class BagrotSummaryActivity extends AppCompatActivity {
             };
             subjectsCount = 9;
         } else {
-            grades =  new BagrotGrade[]{
+            grades = new BagrotGrade[]{
                     (BagrotGrade) gi.getSerializableExtra("lashon"),
                     (BagrotGrade) gi.getSerializableExtra("saparot"),
                     (BagrotGrade) gi.getSerializableExtra("history"),
@@ -63,7 +67,12 @@ public class BagrotSummaryActivity extends AppCompatActivity {
             subjectsCount = 10;
         }
 
-        BagrotCertificate certificate = new BagrotCertificate(subjectsCount, grades);
+        return new BagrotCertificate(subjectsCount, grades);
+    }
+
+    private void initBagrotUI() {
+        BagrotCertificate certificate = initCertificate();
+        String username = gi.getStringExtra("username");
         summary = certificate.BagrotSummary();
         bagrotAvg = certificate.bagrotAvg();
 
