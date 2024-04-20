@@ -16,7 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="17"
+        android:layout_weight="1.2"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -26,14 +26,95 @@
             android:layout_weight="15" />
 
         <TextView
-            android:id="@+id/summary"
-            android:layout_width="match_parent"
+            android:id="@+id/userInfo"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="15"
-            android:textSize="20sp" />
+            android:gravity="center_horizontal"
+            android:textSize="18sp" />
 
         <Space
             android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="13"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15" />
+
+        <TextView
+            android:id="@+id/subjectList"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:gravity="center_horizontal"
+            android:text="Subjects"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/levelList"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:gravity="center_horizontal"
+            android:text="Level"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/gradeList"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:gravity="center_horizontal"
+            android:text="Grade"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/bonusList"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:gravity="center_horizontal"
+            android:text="Bonus"
+            android:textSize="20sp" />
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15" />
+
+        <TextView
+            android:id="@+id/average"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:gravity="center_horizontal"
+            android:textSize="16sp" />
+
+        <Space
+            android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_weight="15" />
     </LinearLayout>
@@ -46,7 +127,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
+        android:layout_weight="1.2"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15" />
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:gravity="center_horizontal"
+            android:text="All averages:"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -60,7 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:gravity="center_horizontal" />
+            android:textSize="16sp" />
 
         <Space
             android:layout_width="50dp"
@@ -76,7 +183,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="2"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -90,7 +197,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:textSize="18sp" />
 
         <Space
             android:layout_width="50dp"
@@ -101,7 +209,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="2" />
 
     <LinearLayout
         android:layout_width="match_parent"

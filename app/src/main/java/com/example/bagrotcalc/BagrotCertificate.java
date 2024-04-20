@@ -9,33 +9,37 @@ public class BagrotCertificate {
         this.grades = grades;
     }
 
-    public String toString() {
-        String summarise = "";
-        for(int i = 0; i<subjectsCount; i++) {
-            summarise += grades[i] + "\n";
+    public String[] BagrotSummary() {
+        String subjectStr = "", levelStr = "" , gradeStr = "", bonusStr = "";
+
+        for(int i = 0; i < subjectsCount; i++) {
+            subjectStr += grades[i].getSubject() + "\n";
+            levelStr += grades[i].getLevel() + "\n";
+            gradeStr += grades[i].getGrade() + "\n";
+            bonusStr += grades[i].gradeWithBonus() + "\n";
         }
-        return summarise;
+
+        return new String[]{subjectStr, levelStr, gradeStr, bonusStr};
     }
 
     public Double bagrotAvg() {
-        double sum = 0;
-        int unitCount = 0;
-        for(int i = 0; i<subjectsCount; i++) {
+        double sum = 0, unitCount = 0;
+
+        for(int i = 0; i < subjectsCount; i++) {
             sum += grades[i].gradeWithBonus() * grades[i].getLevel();
             unitCount += grades[i].getLevel();
         }
-        if(subjectsCount == 10) {
-            sum += grades[9].gradeWithBonus() * 5;
-            unitCount += grades[9].getLevel();
-        }
+
         return sum/unitCount;
     }
 
     private int sumRequiredSubjects() {
         int sum = 0;
-        for(int i = 0; i<7; i++) {
+
+        for(int i = 0; i < 7; i++) {
             sum += grades[i].gradeWithBonus() * grades[i].getLevel();
         }
+
         return sum;
     }
 
@@ -44,9 +48,9 @@ public class BagrotCertificate {
         double averages = 0;
         double sum = 0;
         int count = 0;
-
         int unitCount = 0;
-        for(int i = 0; i<7; i++) {
+
+        for(int i = 0; i < 7; i++) {
             unitCount += grades[i].getLevel();
         }
 
@@ -55,46 +59,44 @@ public class BagrotCertificate {
                 averages = bagrotAvg();
                 avgArr = new double[]{averages};
             } else {
-                avgArr = new double[3];
-                for(int i = 7; i<subjectsCount; i++) {
-                    sum = sumRequiredSubjects();
-                    sum += grades[i].gradeWithBonus() * grades[i].getLevel();
+                avgArr = new double[2];
+
+                for(int i = 7; i < subjectsCount; i++) {
+                    sum = sumRequiredSubjects() + (grades[i].gradeWithBonus() * grades[i].getLevel());
                     averages = sum/(unitCount + grades[i].getLevel());
                     avgArr[count] = averages;
                     count++;
                 }
-                sum = sumRequiredSubjects();
-                for(int i = 7; i<subjectsCount; i++) {
-                    sum += grades[i].gradeWithBonus() * grades[i].getLevel();
-                    unitCount += grades[i].getLevel();
-                }
-                averages = sum/unitCount;
-                avgArr[count] = averages;
             }
         } else {
             avgArr = new double[6];
-            for(int i = 7; i<subjectsCount; i++) {
-                sum = sumRequiredSubjects();
-                sum += grades[i].gradeWithBonus() * grades[i].getLevel();
+
+            for(int i = 7; i < subjectsCount; i++) {
+                sum = sumRequiredSubjects() + (grades[i].gradeWithBonus() * grades[i].getLevel());
                 averages = sum/(unitCount + grades[i].getLevel());
                 avgArr[count] = averages;
                 count++;
             }
             int tempUnitCount = unitCount;
-            for(int i = 7; i<subjectsCount; i++) {
-                for(int j = i+1; j<subjectsCount; j++) {
+
+            for(int i = 7; i < subjectsCount; i++) {
+                for(int j = i+1; j < subjectsCount; j++) {
                     sum = sumRequiredSubjects();
                     unitCount = tempUnitCount;
+
                     sum += grades[i].gradeWithBonus() * grades[i].getLevel();
                     unitCount += grades[i].getLevel();
+
                     sum += grades[j].gradeWithBonus() * grades[j].getLevel();
                     unitCount += grades[j].getLevel();
+
                     averages = sum/unitCount;
                     avgArr[count] = averages;
                     count++;
                 }
             }
         }
+
         return avgArr;
     }
 }

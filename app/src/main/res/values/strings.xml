@@ -1,12 +1,4 @@
 <resources>
     <string name="app_name">bagrotCalc</string>
 
-    <string name="lashon_subject">Hebrew</string>
-    <string name="saparot_subject">Safrot</string>
-    <string name="history_subject">History</string>
-    <string name="ezrahot_subject">Ezrahot</string>
-    <string name="bible_subject">Bible</string>
-    <string name="math_subject">Math</string>
-    <string name="english_subject">English</string>
-
 </resources>

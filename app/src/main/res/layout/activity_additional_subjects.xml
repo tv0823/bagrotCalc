@@ -60,7 +60,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/math_subject" />
+            android:text="Math" />
 
         <Space
             android:layout_width="5dp"
@@ -120,7 +120,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/english_subject" />
+            android:text="English" />
 
         <Space
             android:layout_width="5dp"
@@ -178,6 +178,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
             android:gravity="center"
             android:hint="Subject"
             android:inputType="text" />
@@ -225,7 +226,7 @@
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="pressedtB2"
+            android:onClick="checkValidSecondSubj"
             android:textOff="1"
             android:textOn="5" />
 
@@ -240,6 +241,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
             android:gravity="center"
             android:hint="Subject"
             android:inputType="text" />
@@ -288,7 +290,7 @@
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="pressedtB3"
+            android:onClick="addThirdSubj"
             android:textOff="Add sub"
             android:textOn="5"
             android:textSize="14sp" />
@@ -304,6 +306,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
             android:gravity="center"
             android:hint="Subject"
             android:inputType="text"

@@ -31,6 +31,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
             android:gravity="center"
             android:hint="Username"
             android:inputType="textPersonName" />
@@ -90,7 +91,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/lashon_subject" />
+            android:text="Hebrew" />
 
         <Space
             android:layout_width="5dp"
@@ -147,7 +148,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/saparot_subject" />
+            android:text="Safrot" />
 
         <Space
             android:layout_width="5dp"
@@ -204,7 +205,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/history_subject" />
+            android:text="History" />
 
         <Space
             android:layout_width="5dp"
@@ -261,7 +262,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/ezrahot_subject" />
+            android:text="Ezrahot" />
 
         <Space
             android:layout_width="5dp"
@@ -318,7 +319,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/bible_subject" />
+            android:text="Bible" />
 
         <Space
             android:layout_width="5dp"

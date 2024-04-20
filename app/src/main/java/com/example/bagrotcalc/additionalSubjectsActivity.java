@@ -74,8 +74,8 @@ public class additionalSubjectsActivity extends AppCompatActivity {
             si.putExtra("ezrahot", gi.getSerializableExtra("ezrahot"));
             si.putExtra("bible", gi.getSerializableExtra("bible"));
 
-            si.putExtra("math", new BagrotGrade(getString(R.string.math_subject), Integer.parseInt(lvlMath), Integer.parseInt(gradeMath)));
-            si.putExtra("english", new BagrotGrade(getString(R.string.english_subject), Integer.parseInt(lvlEnglish), Integer.parseInt(gradeEnglish)));
+            si.putExtra("math", new BagrotGrade("Math", Integer.parseInt(lvlMath), Integer.parseInt(gradeMath)));
+            si.putExtra("english", new BagrotGrade("English", Integer.parseInt(lvlEnglish), Integer.parseInt(gradeEnglish)));
             si.putExtra("sub1", new BagrotGrade(sub1, 5, Integer.parseInt(gradeSub1)));
 
             if (!tBsub2.isChecked()) {
@@ -91,7 +91,7 @@ public class additionalSubjectsActivity extends AppCompatActivity {
         }
     }
 
-    public void pressedtB3(View view) {
+    public void addThirdSubj(View view) {
         if(tBsub3.isChecked()) {
             eTsub3.setVisibility(View.VISIBLE);
             eTgradeSub3.setVisibility(View.VISIBLE);
@@ -104,10 +104,10 @@ public class additionalSubjectsActivity extends AppCompatActivity {
         }
     }
 
-    public void pressedtB2(View view) {
+    public void checkValidSecondSubj(View view) {
         if(tBsub3.isChecked()) {
             tBsub2.setChecked(true);
-            Toast.makeText(this, "Cant do this while 3 subjects are on", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cant have 11 level additional subjects", Toast.LENGTH_LONG).show();
         }
     }
 }

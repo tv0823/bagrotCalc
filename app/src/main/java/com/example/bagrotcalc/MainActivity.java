@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         eThistory = findViewById(R.id.eThistory);
         eTezrahot = findViewById(R.id.eTezrahot);
         eTbible = findViewById(R.id.eTbible);
-
     }
 
     public void next(View view) {
@@ -41,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             si.putExtra("username", userName);
-            si.putExtra("lashon", new BagrotGrade(getString(R.string.lashon_subject), 2, Integer.parseInt(gradeLashon)));
-            si.putExtra("saparot", new BagrotGrade(getString(R.string.saparot_subject), 2, Integer.parseInt(gradeSaparot)));
-            si.putExtra("history", new BagrotGrade(getString(R.string.history_subject), 2, Integer.parseInt(gradeHistory)));
-            si.putExtra("ezrahot", new BagrotGrade(getString(R.string.ezrahot_subject), 2, Integer.parseInt(gradeEzrahot)));
-            si.putExtra("bible", new BagrotGrade(getString(R.string.bible_subject), 2, Integer.parseInt(gradeBible)));
+            si.putExtra("lashon", new BagrotGrade("Hebrew", 2, Integer.parseInt(gradeLashon)));
+            si.putExtra("saparot", new BagrotGrade("Safrot", 2, Integer.parseInt(gradeSaparot)));
+            si.putExtra("history", new BagrotGrade("History", 2, Integer.parseInt(gradeHistory)));
+            si.putExtra("ezrahot", new BagrotGrade("Ezrahot", 2, Integer.parseInt(gradeEzrahot)));
+            si.putExtra("bible", new BagrotGrade("Bible", 2, Integer.parseInt(gradeBible)));
 
             startActivity(si);
         }
