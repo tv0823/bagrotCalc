@@ -8,8 +8,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class BagrotSummaryActivity extends AppCompatActivity {
-    TextView allAverages, bestAverage, subjectList, levelList, gradeList, bonusList, userInfo, average;
+    TextView allAverages, allAveragesTitle, bestAverage, subjectList, levelList, gradeList, bonusList, userInfo, average;
     Intent gi;
+    BagrotGrade[] grades;
+    int subjectsCount;
     double[] allAvgArr;
     String[] summary;
     double bestAvg, bagrotAvg;
@@ -26,6 +28,7 @@ public class BagrotSummaryActivity extends AppCompatActivity {
         bonusList = findViewById(R.id.bonusList);
         average = findViewById(R.id.average);
         allAverages = findViewById(R.id.allAverages);
+        allAveragesTitle = findViewById(R.id.allAveragesTitle);
         bestAverage = findViewById(R.id.bestAverage);
 
         gi = getIntent();
@@ -34,9 +37,6 @@ public class BagrotSummaryActivity extends AppCompatActivity {
     }
 
     private BagrotCertificate initCertificate() {
-        BagrotGrade[] grades;
-        int subjectsCount;
-
         BagrotGrade sub3 = (BagrotGrade) gi.getSerializableExtra("sub3");
         if(sub3 == null) {
             grades = new BagrotGrade[]{
@@ -77,31 +77,37 @@ public class BagrotSummaryActivity extends AppCompatActivity {
         bagrotAvg = certificate.bagrotAvg();
 
         userInfo.setText(username + " bagrot certificate");
-        subjectList.setText(summary[0]);
-        levelList.setText(summary[1]);
-        gradeList.setText(summary[2]);
-        bonusList.setText(summary[3]);
-        average.setText("The average is: " + String.format("%.3f", bagrotAvg));
+        subjectList.setText("Subjects\n" + summary[0]);
+        levelList.setText("Level\n" + summary[1]);
+        gradeList.setText("Grade\n" + summary[2]);
+        bonusList.setText("Bonus\n" + summary[3]);
 
-        allAvgArr = certificate.allAvg();
-
-        for(int i = 0; i < allAvgArr.length; i++) {
-            allAvg += String.format("%.3f", allAvgArr[i]) + "\n";
+        if(subjectsCount != 10 && grades[8].getLevel() != 5) {
+            average.setText("The average is: " + String.format("%.3f", bagrotAvg));
         }
-        allAverages.setText(allAvg);
+        else {
+            allAvgArr = certificate.allAvg();
 
-        bestAvg = allAvgArr[0];
-
-        for(int i = 1; i < allAvgArr.length; i++) {
-            if(allAvgArr[i] > bestAvg) {
-                bestAvg = allAvgArr[i];
+            for (int i = 0; i < allAvgArr.length; i++) {
+                allAvg += String.format("%.3f", allAvgArr[i]) + "\n";
             }
-        }
+            allAvg += String.format("%.3f", bagrotAvg);
+            allAveragesTitle.setVisibility(View.VISIBLE);
+            allAverages.setText(allAvg);
 
-        if (bagrotAvg > bestAvg) {
-            bestAvg = bagrotAvg;
+            bestAvg = allAvgArr[0];
+
+            for (int i = 1; i < allAvgArr.length; i++) {
+                if (allAvgArr[i] > bestAvg) {
+                    bestAvg = allAvgArr[i];
+                }
+            }
+
+            if (bagrotAvg > bestAvg) {
+                bestAvg = bagrotAvg;
+            }
+            bestAverage.setText("The best average is: " + String.format("%.3f", bestAvg));
         }
-        bestAverage.setText("The best average is: " + String.format("%.3f", bestAvg));
     }
 
     public void prev(View view) {
