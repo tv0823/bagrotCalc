@@ -88,10 +88,10 @@ public class BagrotSummaryActivity extends AppCompatActivity {
         else {
             allAvgArr = certificate.allAvg();
 
+            allAvg += String.format("%.3f", bagrotAvg) + "\n";
             for (int i = 0; i < allAvgArr.length; i++) {
                 allAvg += String.format("%.3f", allAvgArr[i]) + "\n";
             }
-            allAvg += String.format("%.3f", bagrotAvg);
             allAveragesTitle.setVisibility(View.VISIBLE);
             allAverages.setText(allAvg);
 

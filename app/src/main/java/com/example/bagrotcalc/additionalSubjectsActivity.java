@@ -11,11 +11,10 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class additionalSubjectsActivity extends AppCompatActivity {
-    BagrotCertificate certificate;
     Intent gi;
+    String tBsub2Status, tBsub3Status;
     EditText eTmath, eTenglish, levelMath, levelEnglish, eTgradeSub1, eTgradeSub2, eTgradeSub3, eTsub1, eTsub2, eTsub3;
     ToggleButton tBsub2, tBsub3;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +37,61 @@ public class additionalSubjectsActivity extends AppCompatActivity {
         tBsub3 = findViewById(R.id.tBsub3);
 
         gi = getIntent();
+        putInfo();
+    }
+
+    public void putInfo() {
+        eTmath.setText(gi.getStringExtra("eTmath"));
+        eTenglish.setText(gi.getStringExtra("eTenglish"));
+        levelMath.setText(gi.getStringExtra("levelMath"));
+        levelEnglish.setText(gi.getStringExtra("levelEnglish"));
+        eTgradeSub1.setText(gi.getStringExtra("eTgradeSub1"));
+        eTgradeSub2.setText(gi.getStringExtra("eTgradeSub2"));
+        eTgradeSub3.setText(gi.getStringExtra("eTgradeSub3"));
+        eTsub1.setText(gi.getStringExtra("eTsub1"));
+        eTsub2.setText(gi.getStringExtra("eTsub2"));
+        eTsub3.setText(gi.getStringExtra("eTsub3"));
+
+        tBsub3Status = gi.getStringExtra("tBsub3");
+        if(tBsub3Status.equals("on")) {
+            tBsub3.setChecked(true);
+            eTsub3.setVisibility(View.VISIBLE);
+            eTgradeSub3.setVisibility(View.VISIBLE);
+            tBsub2.setChecked(true);
+        } else {
+            tBsub2Status = gi.getStringExtra("tBsub2");
+            if(tBsub2Status.equals("on")) {
+                tBsub2.setChecked(true);
+            }
+        }
     }
 
     public void prev(View view) {
+        gi.putExtra("eTmath", eTmath.getText().toString());
+        gi.putExtra("eTenglish", eTenglish.getText().toString());
+        gi.putExtra("levelMath", levelMath.getText().toString());
+        gi.putExtra("levelEnglish", levelEnglish.getText().toString());
+
+        gi.putExtra("eTgradeSub1", eTgradeSub1.getText().toString());
+        gi.putExtra("eTgradeSub2", eTgradeSub2.getText().toString());
+        gi.putExtra("eTgradeSub3", eTgradeSub3.getText().toString());
+        gi.putExtra("eTsub1", eTsub1.getText().toString());
+        gi.putExtra("eTsub2", eTsub2.getText().toString());
+        gi.putExtra("eTsub3", eTsub3.getText().toString());
+
+        if(tBsub3.isChecked()) {
+            gi.putExtra("tBsub2", "on");
+            gi.putExtra("tBsub3", "on");
+        } else {
+            if (tBsub2.isChecked()) {
+                gi.putExtra("tBsub2", "on");
+            } else {
+                gi.putExtra("tBsub2", "off");
+            }
+            gi.putExtra("tBsub3", "off");
+        }
+
+        setResult(RESULT_OK, gi);
         finish();
     }
 
